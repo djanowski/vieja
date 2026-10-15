@@ -28,10 +28,12 @@ app: build build/AppIcon.icns
 
 run: app
 	pkill -x Vieja || true
+	while pgrep -x Vieja >/dev/null; do sleep 0.1; done
 	open $(APP)
 
 install: app
 	pkill -x Vieja || true
+	while pgrep -x Vieja >/dev/null; do sleep 0.1; done
 	rm -rf $(INSTALL)
 	cp -R $(APP) $(INSTALL)
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f $(INSTALL)
