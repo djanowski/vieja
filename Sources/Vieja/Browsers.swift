@@ -33,7 +33,7 @@ enum Browsers {
         return true
     }
 
-    // ponytail: Orion profile apps are bash wrappers that exec /Applications/Orion.app with `-P <uuid>`, so
+    // Orion profile apps are bash wrappers that exec /Applications/Orion.app with `-P <uuid>`, so
     // LaunchServices registers every profile as com.kagi.kagimacOS and NSWorkspace may hand the URL to the
     // wrong one. Find the profile's process by argv and create the tab there directly. Generalize if another
     // browser ships wrapper-script profiles.
